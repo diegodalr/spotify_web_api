@@ -1,0 +1,5 @@
+name: 'Spotify Web API'
+type: module
+description: 'Spotify web API example'
+core: 8.x
+package: 'Custom'

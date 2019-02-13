@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains spotify_web_api.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function spotify_web_api_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the spotify_web_api module.
+    case 'help.page.spotify_web_api':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Spotify web API example') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function spotify_web_api_theme($existing, $type, $theme, $path) {
+  return [
+    'spotify_artist' => [
+      'variables' => [
+        'artist_info' => [],
+        'artist_albums_info' => [],
+      ],
+      'template' => 'spotify_artist',
+      'path' => drupal_get_path('module', 'spotify_web_api') . '/templates',
+    ],
+  ];
+}

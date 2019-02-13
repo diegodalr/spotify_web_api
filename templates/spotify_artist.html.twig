@@ -1,0 +1,28 @@
+<b>{{ artist_info.name }}</b>
+<br/>
+<img src="{{ artist_info.images.0.url }}" title="{{ artist_info.name }}"
+     alt="{{ artist_info.name }}"/>
+<br/>
+<table>
+  <thead>
+  <tr>
+    <th>Foto</th>
+    <th>Album</th>
+    <th>Canción</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for album in artist_albums_info %}
+    <tr>
+      <td>{{ album.name }}</td>
+      <td><img src="{{ album.image }}" title="{{ album.name }}"
+               alt="{{ album.name }}"/></td>
+      <td>
+        <ul>{% for track in album.tracks %}
+            <li>{{ track }}</li>
+          {% endfor %}</ul>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,18 @@
+
+spotify_web_api.spotify_pages_controller_getLatestReleases:
+  path: '/lanzamientos'
+  defaults:
+    _controller: '\Drupal\spotify_web_api\Controller\SpotifyPagesController::getLatestReleases'
+    _title: 'Lanzamientos'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+spotify_web_api.spotify_pages_controller_getArtistPage:
+  path: '/artista/{id}'
+  defaults:
+    _controller: '\Drupal\spotify_web_api\Controller\SpotifyPagesController::getArtistPage'
+    _title: 'Artista'
+    id: 0
+  requirements:
+    _permission: 'access content'
